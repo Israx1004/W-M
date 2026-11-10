@@ -1,0 +1,82 @@
+{
+  "nombre": "W&M Clinica Dental",
+  "lema": "Sonreír es increíble.",
+  "portada": {
+    "titulo": "Sonreír es",
+    "titulo_destacado": "increíble.",
+    "texto": "Clinica dental en Santa Bárbara Almoloya, Cholula. Cuidamos tu salud dental con un trato humano, profesional y cercano, desde que entras hasta que vuelves a sonreír.",
+    "boton": "Agenda tu valoración",
+    "foto": "img/fotos/consultorio.jpg",
+    "foto_alt": "Sillón y equipo de una clinica dental moderno y luminoso",
+    "dato_numero": "30+",
+    "dato_texto": "años creando sonrisas sanas"
+  },
+  "contacto": {
+    "telefono": "222 289 0778",
+    "telefono_link": "+522222890778",
+    "whatsapp": "522222890778",
+    "whatsapp_mensaje": "Hola, quiero agendar una valoración en W&M Clinica Dental.",
+    "correo": "wmdental@gmail.com",
+    "direccion": "Av. 5 de Mayo 14",
+    "colonia": "Santa Bárbara Almoloya, Cholula, Puebla",
+    "mapa_busqueda": "Av. 5 de Mayo 14, Santa Bárbara Almoloya, San Pedro Cholula, Puebla"
+  },
+  "horario": [
+    { "dias": "Lunes a viernes", "abre": "09:00", "cierra": "18:00", "numeros_dia": [1, 2, 3, 4, 5] },
+    { "dias": "Sábado", "abre": "09:00", "cierra": "14:00", "numeros_dia": [6] }
+  ],
+  "servicios_intro": "Tratamientos claros, con un diagnóstico honesto y acompañamiento en cada cita.",
+  "servicios": [
+    {
+      "icono": "limpio",
+      "titulo": "Odontología general",
+      "texto": "Valoración, limpieza, resinas y prevención para mantener tus dientes sanos todo el año.",
+      "incluye": ["Valoración y diagnóstico", "Limpieza dental", "Resinas", "Extracciones"]
+    },
+    {
+      "icono": "estetica",
+      "titulo": "Estética dental",
+      "texto": "Blanqueamiento y tratamientos personalizados para una sonrisa natural y armónica.",
+      "incluye": ["Blanqueamiento", "Carillas", "Diseño de sonrisa"]
+    },
+    {
+      "icono": "brackets",
+      "titulo": "Ortodoncia",
+      "texto": "Alineación para niños y adultos, con revisión cercana en cada etapa del tratamiento.",
+      "incluye": ["Brackets metálicos", "Brackets estéticos", "Retenedores"]
+    }
+  ],
+  "proceso": {
+    "titulo": "Primero te escuchamos. Después, cuidamos de ti.",
+    "texto": "Ir al dentista puede ser una experiencia tranquila. Te explicamos cada paso y resolvemos tus dudas antes de empezar.",
+    "foto": "img/fotos/atencion.jpg",
+    "foto_alt": "Dentista explicando el tratamiento a una paciente durante la consulta",
+    "pasos": [
+      { "titulo": "Te escuchamos", "texto": "Platicamos de lo que te molesta y de lo que esperas de tu sonrisa." },
+      { "titulo": "Revisamos y explicamos", "texto": "Valoración completa y un diagnóstico en palabras claras." },
+      { "titulo": "Tu plan a medida", "texto": "Opciones, tiempos y costos por escrito, sin sorpresas." }
+    ]
+  },
+  "equipo_intro": "Un equipo comprometido con tu bienestar, en constante preparación y con una manera cálida de atenderte.",
+  "equipo": [
+    {
+      "nombre": "Dra. Eva Maricela Mendoza",
+      "especialidad": "Cirujana general",
+      "foto": "img/fotos/eva.jpeg",
+      "foto_posicion": "50% 25%"
+    },
+    {
+      "nombre": "Dr. William Felipe Bello Mendoza",
+      "especialidad": "Ortodoncista y cirujano maxilofacial",
+      "foto": "img/fotos/william.jpeg",
+      "foto_posicion": "50% 12%"
+    },
+    {
+      "nombre": "Dra. Andrea Leyva Salazar",
+      "especialidad": "Endodoncista",
+      "foto": "img/fotos/andrea.jpeg",
+      "foto_posicion": "50% 30%"
+    }
+  ],
+  "creditos_fotos": "Fotos de la clinica y equipo por W&M Clinica Dental."
+}

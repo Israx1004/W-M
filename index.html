@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W&amp;M Clinica Dental · Santa Bárbara Almoloya, Cholula</title>
+  <meta name="description" content="Clinica dental en Santa Bárbara Almoloya, Cholula, Puebla. Odontología general, estética dental y ortodoncia.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Dibujos propios: diente del logo, variantes por servicio y destello -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <defs>
+      <symbol id="diente" viewBox="0 0 40 40">
+        <path d="M11.2 5.4C6.4 8 6 15.6 8.5 21.1c1.5 3.3 2.2 12.5 5.8 13.2 2.7.5 2.4-8.4 5.7-8.4s3 8.9 5.7 8.4c3.6-.7 4.3-9.9 5.8-13.2C34 15.6 33.6 8 28.8 5.4c-3.9-2.1-6.1.8-8.8.8s-4.9-2.9-8.8-.8Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M20 6.3c2.2 1 4.2 1.7 6.7 1.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="destello" viewBox="0 0 20 20">
+        <path d="M10 0c.8 5.5 4.5 9.2 10 10-5.5.8-9.2 4.5-10 10-.8-5.5-4.5-9.2-10-10 5.5-.8 9.2-4.5 10-10Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="diente-limpio" viewBox="0 0 64 64">
+        <use href="#diente" x="4" y="8" width="48" height="48"/>
+        <use href="#destello" x="44" y="4" width="14" height="14" class="brillo"/>
+        <path d="M40 24c1.5 3 1.5 6 0 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="diente-estetica" viewBox="0 0 64 64">
+        <use href="#diente" x="8" y="10" width="48" height="48"/>
+        <use href="#destello" x="2" y="2" width="16" height="16" class="brillo"/>
+        <use href="#destello" x="48" y="14" width="10" height="10" class="brillo"/>
+        <use href="#destello" x="52" y="44" width="7" height="7" class="brillo"/>
+      </symbol>
+      <symbol id="diente-brackets" viewBox="0 0 64 64">
+        <use href="#diente" x="8" y="8" width="48" height="48"/>
+        <path d="M12 32h40" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <rect x="25.5" y="26.5" width="13" height="11" rx="2" fill="var(--fondo)" stroke="currentColor" stroke-width="2.2"/>
+        <path d="M32 26.5v11" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra">
+    <div class="marco barra-dentro">
+      <a class="marca" href="#inicio" aria-label="W&amp;M Clinica Dental, inicio">
+        <svg class="marca-diente" aria-hidden="true"><use href="#diente"/></svg>
+        <span class="marca-nombre">W<span>&amp;</span>M</span>
+      </a>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+      <a class="boton boton-chico" data-tel href="tel:+522222890778">Llamar</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Portada -->
+    <section class="portada marco" id="inicio" aria-labelledby="titulo-portada">
+      <div class="portada-texto">
+        <h1 id="titulo-portada">
+          <span data-campo="portada.titulo">Sonreír es</span>
+          <span class="acento-envoltura">
+            <em data-campo="portada.titulo_destacado">increíble.</em>
+            <svg class="destello d1" aria-hidden="true"><use href="#destello"/></svg>
+            <svg class="destello d2" aria-hidden="true"><use href="#destello"/></svg>
+          </span>
+        </h1>
+        <p class="portada-copia" data-campo="portada.texto">Clinica dental en Santa Bárbara Almoloya, Cholula.</p>
+        <div class="acciones">
+          <a class="boton boton-principal" data-whatsapp href="https://wa.me/522222890778">
+            <span data-campo="portada.boton">Agenda tu valoración</span>
+            <svg class="destello-boton" aria-hidden="true"><use href="#destello"/></svg>
+          </a>
+          <a class="enlace" href="#servicios">Conoce nuestros servicios</a>
+        </div>
+        <p class="estado" data-estado aria-live="polite"></p>
+      </div>
+      <figure class="portada-foto">
+        <img data-foto="portada" src="img/fotos/consultorio.jpg" alt="Sillón y equipo de un consultorio dental moderno" width="1800" height="1200" fetchpriority="high">
+        <figcaption class="portada-dato">
+          <strong data-campo="portada.dato_numero">10+</strong>
+          <span data-campo="portada.dato_texto">años creando sonrisas sanas</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <div class="sonrisa" aria-hidden="true"><svg viewBox="0 0 400 46"><use href="#sonrisa"/></svg></div>
+
+    <!-- Servicios -->
+    <section class="seccion servicios" id="servicios" aria-labelledby="titulo-servicios">
+      <div class="marco">
+        <div class="cabeza">
+          <h2 id="titulo-servicios">Todo lo que tu sonrisa <em>necesita.</em></h2>
+          <p data-campo="servicios_intro"></p>
+        </div>
+        <div class="servicios-lista" data-lista="servicios"></div>
+      </div>
+    </section>
+
+    <div class="sonrisa" aria-hidden="true"><svg viewBox="0 0 400 46"><use href="#sonrisa"/></svg></div>
+
+    <!-- Proceso -->
+    <section class="seccion proceso" aria-labelledby="titulo-proceso">
+      <div class="marco proceso-dentro">
+        <img class="proceso-foto" data-foto="proceso" src="img/fotos/atencion.jpg" alt="" width="1400" height="933" loading="lazy">
+        <div class="proceso-texto">
+          <h2 id="titulo-proceso" data-campo="proceso.titulo">Primero te escuchamos. Después, cuidamos de ti.</h2>
+          <p data-campo="proceso.texto"></p>
+          <ol class="pasos" data-lista="pasos"></ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="sonrisa" aria-hidden="true"><svg viewBox="0 0 400 46"><use href="#sonrisa"/></svg></div>
+
+    <!-- Equipo -->
+    <section class="seccion equipo" id="equipo" aria-labelledby="titulo-equipo">
+      <div class="marco">
+        <div class="cabeza">
+          <h2 id="titulo-equipo">Profesionales que <em>te hacen sonreír.</em></h2>
+          <p data-campo="equipo_intro"></p>
+        </div>
+        <div class="equipo-lista" data-lista="equipo"></div>
+      </div>
+    </section>
+
+    <div class="sonrisa" aria-hidden="true"><svg viewBox="0 0 400 46"><use href="#sonrisa"/></svg></div>
+
+    <!-- Ubicación -->
+    <section class="seccion ubicacion" id="ubicacion" aria-labelledby="titulo-ubicacion">
+      <div class="marco ubicacion-dentro">
+        <div class="ubicacion-texto">
+          <h2 id="titulo-ubicacion">Estamos cerca de tu próxima <em>sonrisa.</em></h2>
+          <dl class="datos">
+            <div><dt>Dirección</dt><dd><span data-campo="contacto.direccion"></span><br><span data-campo="contacto.colonia"></span></dd></div>
+            <div><dt>Horario</dt><dd data-lista="horario"></dd></div>
+            <div><dt>Contacto</dt><dd>
+              <a data-tel href="tel:+522222890778" data-campo="contacto.telefono">222 289 0778</a><br>
+              <a data-correo href="mailto:wmdental@gmail.com" data-campo="contacto.correo">wmdental@gmail.com</a>
+            </dd></div>
+          </dl>
+          <div class="acciones">
+            <a class="boton boton-principal" data-whatsapp href="https://wa.me/522222890778">Escríbenos por WhatsApp
+              <svg class="destello-boton" aria-hidden="true"><use href="#destello"/></svg></a>
+            <a class="enlace" data-mapa-link href="https://www.google.com/maps" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+        <div class="mapa">
+          <iframe data-mapa title="Mapa de la ubicación de W&amp;M Clinica Dental" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="marco">
+      <p class="pie-nombre">W<span>&amp;</span>M Clinica Dental</p>
+      <p class="pie-lema" data-campo="lema">Sonreír es increíble.</p>
+      <p class="pie-legal"><span data-anio></span> · <span data-campo="creditos_fotos"></span></p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante" data-whatsapp href="https://wa.me/522222890778" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+
+  <!-- La sonrisa de los separadores: curva y una hilera de dientitos -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <symbol id="sonrisa" viewBox="0 0 400 46">
+      <path d="M40 8 Q200 58 360 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <g fill="var(--fondo)" stroke="currentColor" stroke-width="1.8">
+        <rect x="146" y="20" width="20" height="17" rx="6"/>
+        <rect x="169" y="24" width="19" height="17" rx="6"/>
+        <rect x="191" y="25" width="19" height="17" rx="6"/>
+        <rect x="213" y="24" width="19" height="17" rx="6"/>
+        <rect x="235" y="20" width="20" height="17" rx="6"/>
+      </g>
+    </symbol>
+  </svg>
+  <script src="js/main.js"></script>
+</body>
+</html>
