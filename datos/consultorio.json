@@ -23,15 +23,17 @@
   },
   "horario": [
     { "dias": "Lunes a viernes", "abre": "09:00", "cierra": "18:00", "numeros_dia": [1, 2, 3, 4, 5] },
-    { "dias": "Sábado", "abre": "09:00", "cierra": "14:00", "numeros_dia": [6] }
+    { "dias": "Sábado", "abre": "09:00", "cierra": "16:00", "numeros_dia": [6] }
   ],
   "servicios_intro": "Tratamientos claros, con un diagnóstico honesto y acompañamiento en cada cita.",
+  "servicios_boton": "Pregunta por nuestros servicios",
+  "servicios_mensaje": "Hola, quiero información sobre sus servicios.",
   "servicios": [
     {
       "icono": "limpio",
       "titulo": "Odontología general",
       "texto": "Valoración, limpieza, resinas y prevención para mantener tus dientes sanos todo el año.",
-      "incluye": ["Valoración y diagnóstico", "Limpieza dental", "Resinas", "Extracciones"]
+      "incluye": ["Valoración y diagnóstico", "Limpieza dental", "Resinas", "Extracciones", "Periodoncia"]
     },
     {
       "icono": "estetica",
@@ -60,22 +62,62 @@
   "equipo_intro": "Un equipo comprometido con tu bienestar, en constante preparación y con una manera cálida de atenderte.",
   "equipo": [
     {
+      "id": "eva",
       "nombre": "Dra. Eva Maricela Mendoza",
       "especialidad": "Cirujana general",
       "foto": "img/fotos/eva.jpeg",
-      "foto_posicion": "50% 25%"
+      "foto_posicion": "50% 25%",
+      "cedula": "1438775",
+      "telefono": "2223435467",
+      "whatsapp": "2223435467",
+      "especialidades": [
+        { "titulo": "Odontología general", "texto": "Diagnóstico, prevención y tratamiento integral para mantener tu boca sana." }
+      ],
+      "galeria": [
+        { "foto": "img/fotos/atencion.jpg", "alt": "Atención a un paciente en consulta", "pie": "En consulta" },
+        { "foto": "img/fotos/consultorio.jpg", "alt": "Consultorio de W&M Clinica Dental", "pie": "Nuestro consultorio" },
+        { "foto": "img/fotos/eva.jpeg", "alt": "Dra. Eva Maricela Mendoza en la clínica", "posicion": "50% 25%", "pie": "" }
+      ],
+      "formacion": []
     },
     {
+      "id": "william",
       "nombre": "Dr. William Felipe Bello Mendoza",
       "especialidad": "Ortodoncista y cirujano maxilofacial",
       "foto": "img/fotos/william.jpeg",
-      "foto_posicion": "50% 12%"
+      "foto_posicion": "50% 12%",
+      "cedula": "11001503",
+      "telefono": "2223911464",
+      "whatsapp": "2223911464",
+      "especialidades": [
+        { "titulo": "Ortodoncia", "texto": "Corrección de la posición de dientes y mordida con brackets y retenedores." },
+        { "titulo": "Cirugía maxilofacial", "texto": "Tratamiento quirúrgico de boca, mandíbula y estructuras de la cara." }
+      ],
+      "galeria": [
+        { "foto": "img/fotos/atencion.jpg", "alt": "Atención a un paciente en consulta", "pie": "En consulta" },
+        { "foto": "img/fotos/consultorio.jpg", "alt": "Consultorio de W&M Clinica Dental", "pie": "Nuestro consultorio" },
+        { "foto": "img/fotos/william.jpeg", "alt": "Dr. William Felipe Bello Mendoza en la clínica", "posicion": "50% 12%", "pie": "" }
+      ],
+      "formacion": []
     },
     {
+      "id": "andrea",
       "nombre": "Dra. Andrea Leyva Salazar",
       "especialidad": "Endodoncista",
       "foto": "img/fotos/andrea.jpeg",
-      "foto_posicion": "50% 30%"
+      "foto_posicion": "50% 30%",
+      "cedula": "13538640",
+      "telefono": "",
+      "whatsapp": "",
+      "especialidades": [
+        { "titulo": "Endodoncia", "texto": "Tratamiento de conductos para salvar dientes con dolor o infección." }
+      ],
+      "galeria": [
+        { "foto": "img/fotos/atencion.jpg", "alt": "Atención a un paciente en consulta", "pie": "En consulta" },
+        { "foto": "img/fotos/consultorio.jpg", "alt": "Consultorio de W&M Clinica Dental", "pie": "Nuestro consultorio" },
+        { "foto": "img/fotos/andrea.jpeg", "alt": "Dra. Andrea Leyva Salazar en la clínica", "posicion": "50% 30%", "pie": "" }
+      ],
+      "formacion": []
     }
   ],
   "creditos_fotos": "Fotos de la clinica y equipo por W&M Clinica Dental."

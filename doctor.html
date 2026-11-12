@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestro equipo · W&amp;M Clinica Dental</title>
+  <meta name="description" content="Conoce a los especialistas de W&amp;M Clinica Dental en Santa Bárbara Almoloya, Cholula.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/doctor.css">
+</head>
+<body class="pagina-doctor">
+  <!-- Dibujos propios (los mismos del index) -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <defs>
+      <symbol id="diente" viewBox="0 0 40 40">
+        <path d="M11.2 5.4C6.4 8 6 15.6 8.5 21.1c1.5 3.3 2.2 12.5 5.8 13.2 2.7.5 2.4-8.4 5.7-8.4s3 8.9 5.7 8.4c3.6-.7 4.3-9.9 5.8-13.2C34 15.6 33.6 8 28.8 5.4c-3.9-2.1-6.1.8-8.8.8s-4.9-2.9-8.8-.8Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M20 6.3c2.2 1 4.2 1.7 6.7 1.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="destello" viewBox="0 0 20 20">
+        <path d="M10 0c.8 5.5 4.5 9.2 10 10-5.5.8-9.2 4.5-10 10-.8-5.5-4.5-9.2-10-10 5.5-.8 9.2-4.5 10-10Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="diente-limpio" viewBox="0 0 64 64">
+        <use href="#diente" x="4" y="8" width="48" height="48"/>
+        <use href="#destello" x="44" y="4" width="14" height="14" class="brillo"/>
+        <path d="M40 24c1.5 3 1.5 6 0 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+      </symbol>
+      <symbol id="diente-estetica" viewBox="0 0 64 64">
+        <use href="#diente" x="8" y="10" width="48" height="48"/>
+        <use href="#destello" x="2" y="2" width="16" height="16" class="brillo"/>
+        <use href="#destello" x="48" y="14" width="10" height="10" class="brillo"/>
+        <use href="#destello" x="52" y="44" width="7" height="7" class="brillo"/>
+      </symbol>
+      <symbol id="diente-brackets" viewBox="0 0 64 64">
+        <use href="#diente" x="8" y="8" width="48" height="48"/>
+        <path class="b-alambre" d="M12 32h40" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <g class="b-bracket">
+          <rect x="25.5" y="26.5" width="13" height="11" rx="2" fill="var(--fondo)" stroke="currentColor" stroke-width="2.2"/>
+          <path d="M32 26.5v11" stroke="currentColor" stroke-width="1.6"/>
+        </g>
+      </symbol>
+      <symbol id="wa" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/>
+      </symbol>
+      <symbol id="flecha" viewBox="0 0 24 24">
+        <path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <!-- Separador "sonrisa": curva, dientitos y brackets (se anima al entrar en pantalla) -->
+      <symbol id="sonrisa" viewBox="0 0 400 46">
+        <path class="s-curva" pathLength="1" d="M40 8 Q200 58 360 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <g class="s-dientes" fill="var(--fondo)" stroke="currentColor" stroke-width="1.8">
+          <rect x="146" y="20" width="20" height="17" rx="6"/>
+          <rect x="169" y="24" width="19" height="17" rx="6"/>
+          <rect x="191" y="25" width="19" height="17" rx="6"/>
+          <rect x="213" y="24" width="19" height="17" rx="6"/>
+          <rect x="235" y="20" width="20" height="17" rx="6"/>
+        </g>
+        <path class="s-alambre" pathLength="1" d="M148 27.8 Q200 39 253 27.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <g class="s-brackets" fill="currentColor">
+          <rect x="151" y="24.5" width="10" height="8" rx="1.6"/>
+          <rect x="173.5" y="28.5" width="10" height="8" rx="1.6"/>
+          <rect x="195.5" y="29.5" width="10" height="8" rx="1.6"/>
+          <rect x="217.5" y="28.5" width="10" height="8" rx="1.6"/>
+          <rect x="240" y="24.5" width="10" height="8" rx="1.6"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra">
+    <div class="marco barra-dentro">
+      <a class="marca" href="index.html" aria-label="W&amp;M Clinica Dental, volver al inicio">
+        <svg class="marca-diente" aria-hidden="true"><use href="#diente"/></svg>
+        <span class="marca-nombre">W<span>&amp;</span>M</span>
+      </a>
+      <a class="volver" href="index.html#equipo">
+        <svg aria-hidden="true"><use href="#flecha"/></svg>
+        <span>Volver al inicio</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Se llena con js/doctor.js según ?id= en la dirección -->
+    <section class="perfil marco" aria-labelledby="perfil-nombre">
+      <div class="perfil-texto">
+        <p class="perfil-ruta"><a href="index.html#equipo">Nuestro equipo</a> <span aria-hidden="true">/</span> <span data-d="especialidad"></span></p>
+        <h1 id="perfil-nombre" data-d="nombre">Cargando…</h1>
+        <p class="perfil-especialidad" data-d="especialidad"></p>
+
+        <div class="cedula" data-cedula hidden>
+          <svg class="cedula-icono" aria-hidden="true"><use href="#diente-limpio"/></svg>
+          <div>
+            <span class="cedula-etiqueta">Cédula profesional</span>
+            <strong class="cedula-numero" data-d="cedula"></strong>
+          </div>
+          <a class="cedula-verificar" href="https://www.cedulaprofesional.sep.gob.mx/" target="_blank" rel="noopener">Verificar en la SEP</a>
+        </div>
+
+        <div class="acciones">
+          <a class="boton boton-wa" data-wa href="#">
+            <svg aria-hidden="true"><use href="#wa"/></svg>
+            <span data-d="boton_wa">Agendar por WhatsApp</span>
+          </a>
+          <a class="perfil-numero" data-wa href="#" data-d="telefono"></a>
+        </div>
+      </div>
+
+      <figure class="perfil-foto" data-d-foto>
+        <!-- la foto la inserta js/doctor.js -->
+        <svg class="destello p1" aria-hidden="true"><use href="#destello"/></svg>
+        <svg class="destello p2" aria-hidden="true"><use href="#destello"/></svg>
+        <figcaption class="perfil-sello">
+          <svg aria-hidden="true"><use href="#diente"/></svg>
+          <span>Atiende en <strong>W&amp;M</strong><br>Santa Bárbara Almoloya</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <div class="sonrisa" aria-hidden="true"><svg viewBox="0 0 400 46"><use href="#sonrisa"/></svg></div>
+
+    <!-- Especialidades -->
+    <section class="seccion especialidades" aria-labelledby="titulo-especialidades">
+      <div class="marco">
+        <div class="cabeza">
+          <h2 id="titulo-especialidades">Especialidades <em>y enfoque.</em></h2>
+          <p>Áreas en las que se ha preparado para cuidar tu sonrisa con precisión y calma.</p>
+        </div>
+        <ol class="especialidades-lista" data-lista="especialidades"></ol>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="seccion galeria" data-seccion-galeria aria-labelledby="titulo-galeria">
+      <div class="marco">
+        <div class="cabeza">
+          <h2 id="titulo-galeria">En consulta, <em>de cerca.</em></h2>
+          <p>Un vistazo a su día a día en la clínica. Toca una foto para verla completa.</p>
+        </div>
+        <div class="galeria-lista" data-lista="galeria"></div>
+      </div>
+    </section>
+
+    <!-- Formación (solo aparece si hay datos) -->
+    <section class="seccion formacion" data-seccion-formacion hidden aria-labelledby="titulo-formacion">
+      <div class="marco formacion-dentro">
+        <h2 id="titulo-formacion">Formación <em>y trayectoria.</em></h2>
+        <ol class="linea" data-lista="formacion"></ol>
+      </div>
+    </section>
+
+    <!-- Llamado final -->
+    <section class="seccion">
+      <div class="marco cierre">
+        <svg class="cierre-diente" aria-hidden="true"><use href="#diente-estetica"/></svg>
+        <h2 data-d="cierre_titulo">¿Agendamos tu cita?</h2>
+        <p>Escríbele directo por WhatsApp; te responde el equipo de W&amp;M con horarios disponibles.</p>
+        <div class="acciones">
+          <a class="boton boton-claro" data-wa href="#">
+            <svg aria-hidden="true"><use href="#wa"/></svg>
+            <span>Escribir por WhatsApp</span>
+          </a>
+          <a class="enlace enlace-claro" href="index.html">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resto del equipo -->
+    <section class="seccion otros" data-seccion-otros aria-labelledby="titulo-otros">
+      <div class="marco">
+        <h2 id="titulo-otros" class="otros-titulo">Conoce al resto <em>del equipo.</em></h2>
+        <div class="otros-lista" data-lista="otros"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="marco">
+      <p class="pie-nombre">W<span>&amp;</span>M Clinica Dental</p>
+      <p class="pie-lema" data-campo="lema">Sonreír es increíble.</p>
+      <p class="pie-legal"><span data-anio></span> · <a href="index.html">Volver al inicio</a></p>
+    </div>
+  </footer>
+
+  <!-- Visor de fotos -->
+  <dialog class="visor" data-visor aria-label="Foto ampliada">
+    <form method="dialog"><button class="visor-cerrar" aria-label="Cerrar">×</button></form>
+  </dialog>
+
+  <script src="js/doctor.js"></script>
+</body>
+</html>

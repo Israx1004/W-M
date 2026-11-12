@@ -17,15 +17,44 @@
     return n;
   }
 
+  // Copia el dibujo del <symbol> dentro del <svg> (en vez de <use>) para que el CSS pueda animar sus piezas
   function icono(id, clase) {
     var ns = "http://www.w3.org/2000/svg";
     var svg = document.createElementNS(ns, "svg");
-    svg.setAttribute("class", clase);
+    svg.setAttribute("class", ((clase || "") + " icono-vivo icono-" + id).trim());
     svg.setAttribute("aria-hidden", "true");
-    var use = document.createElementNS(ns, "use");
-    use.setAttribute("href", "#" + id);
-    svg.appendChild(use);
+    var sym = document.getElementById(id);
+    if (!sym) return svg;
+    svg.setAttribute("viewBox", sym.getAttribute("viewBox"));
+    var g = document.createElementNS(ns, "g");
+    g.setAttribute("class", "icono-cuerpo");
+    Array.prototype.forEach.call(sym.childNodes, function (n) { g.appendChild(n.cloneNode(true)); });
+    svg.appendChild(g);
     return svg;
+  }
+
+  // Separadores "sonrisa": mismo truco, para animar curva, dientes y brackets por separado
+  function inlinarSonrisas() {
+    var sym = document.getElementById("sonrisa");
+    if (!sym) return;
+    document.querySelectorAll(".sonrisa svg use").forEach(function (u) {
+      var svg = u.parentNode;
+      Array.prototype.forEach.call(sym.childNodes, function (n) { svg.appendChild(n.cloneNode(true)); });
+      svg.removeChild(u);
+    });
+  }
+
+  // Las sonrisas se animan cada vez que entran en pantalla (al bajar y al subir)
+  function observarSonrisas(reducido) {
+    var sonrisas = document.querySelectorAll(".sonrisa");
+    if (reducido || !("IntersectionObserver" in window)) {
+      sonrisas.forEach(function (o) { o.classList.add("visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) { e.target.classList.toggle("visible", e.isIntersecting); });
+    }, { rootMargin: "-6% 0px -6% 0px" });
+    sonrisas.forEach(function (o) { io.observe(o); });
   }
 
   function llenar(d) {
@@ -64,12 +93,15 @@
       var ul = el("ul");
       s.incluye.forEach(function (i) { ul.appendChild(el("li", null, i)); });
       art.appendChild(ul);
-      var a = el("a", "enlace", "Preguntar por WhatsApp");
-      a.href = "https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent("Hola, quiero información sobre " + s.titulo.toLowerCase() + ".");
-      a.target = "_blank"; a.rel = "noopener";
-      art.appendChild(a);
       ls.appendChild(art);
     });
+
+    // Botón único de servicios (WhatsApp con su propio mensaje)
+    var bs = document.querySelector("[data-whatsapp-servicios]");
+    if (bs) {
+      bs.href = "https://wa.me/" + c.whatsapp + "?text=" + encodeURIComponent(d.servicios_mensaje || c.whatsapp_mensaje);
+      bs.target = "_blank"; bs.rel = "noopener";
+    }
 
     // Pasos
     var lp = document.querySelector('[data-lista="pasos"]');
@@ -97,7 +129,17 @@
       fig.appendChild(img);
       art.appendChild(fig);
       art.appendChild(el("p", null, m.especialidad));
-      art.appendChild(el("h3", null, m.nombre));
+      // Si el doctor tiene "id" en datos/consultorio.json, el nombre lleva a su perfil (doctor.html?id=...)
+      var h3 = el("h3");
+      if (m.id) {
+        var cv = el("a", "doctor-cv", m.nombre);
+        cv.href = "doctor.html?id=" + encodeURIComponent(m.id);
+        cv.title = "Ver perfil de " + m.nombre;
+        h3.appendChild(cv);
+      } else {
+        h3.textContent = m.nombre;
+      }
+      art.appendChild(h3);
       le.appendChild(art);
     });
 
@@ -112,7 +154,7 @@
     estadoAbierto(d.horario);
   }
 
-  // Lo "vivo" de la página: si el consultorio está abierto ahora mismo (hora de Puebla).
+  // abierto/cerrado
   function estadoAbierto(horario) {
     var n = document.querySelector("[data-estado]");
     if (!n) return;
@@ -154,7 +196,9 @@
         p.style.setProperty("--retraso", Math.min(i, 8) * 80 + "ms");
       });
     });
-    var objetivos = document.querySelectorAll(".aparece, .sonrisa");
+    inlinarSonrisas();
+    observarSonrisas(reducido);
+    var objetivos = document.querySelectorAll(".aparece");
     if (reducido || !("IntersectionObserver" in window)) {
       objetivos.forEach(function (o) { o.classList.add("visible"); });
       return;
@@ -176,12 +220,5 @@
   fetch("datos/consultorio.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) { llenar(d); animar(); })
-    .catch(function () {
-      // Abierto con doble clic (file://): el navegador no deja leer el JSON. La página muestra el texto base.
-      animar();
-      var aviso = document.createElement("p");
-      aviso.className = "aviso-local";
-      aviso.textContent = "Para ver toda la información abre la página con iniciar.cmd (el navegador no deja leer datos/consultorio.json con doble clic).";
-      document.body.prepend(aviso);
-    });
+    .catch(function (e) { console.error("Error al cargar datos:", e); });
 })();
